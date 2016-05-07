@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507134830) do
+ActiveRecord::Schema.define(version: 20160507143151) do
+
+  create_table "attachments", force: :cascade do |t|
+    t.integer  "user_id",            limit: 4,   null: false
+    t.string   "bucket",             limit: 255, null: false
+    t.string   "domain",             limit: 255, null: false
+    t.string   "file_name",          limit: 255, null: false
+    t.string   "original_file_name", limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           limit: 255, null: false
