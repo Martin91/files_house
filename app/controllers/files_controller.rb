@@ -5,6 +5,7 @@ class FilesController < ApplicationController
   end
 
   def new
+    @file = Attachment.new
   end
 
   def create
